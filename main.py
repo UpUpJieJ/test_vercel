@@ -53,7 +53,7 @@ async def validation_exception_handler(request, exc):
     )
 
 
-main_router = APIRouter(prefix="")
+main_router = APIRouter(prefix="/api")
 main_router.include_router(European_option_price_calculator_router)
 app.include_router(main_router)
 

@@ -1,0 +1,5 @@
+fastapi>=0.104.0
+pydantic>=2.0.0
+numpy>=1.25.0
+scipy>=1.10.0
+loguru>=0.7.0

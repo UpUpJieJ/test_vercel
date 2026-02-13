@@ -27,7 +27,7 @@ export default defineConfig({
   },
   build: {
     // 核心：指定打包输出目录
-    outDir: 'docker/html',
+    outDir: 'dist',
     assetsDir: 'static',
     emptyOutDir: true
   },

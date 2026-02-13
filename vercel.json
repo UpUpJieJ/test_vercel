@@ -1,26 +1,28 @@
 {
   "version": 2,
-  "builds": [
+  "framework": "vite",
+  "buildCommand": "cd frontend/option_price_calculator && npm install && npm run build",
+  "outputDirectory": "frontend/option_price_calculator/dist",
+  "installCommand": "echo 'No root install needed'",
+  "rewrites": [
     {
-      "src": "frontend/option_price_calculator/package.json",
-      "use": "@vercel/static-build"
+      "source": "/api/(.*)",
+      "destination": "api/index.py"
     },
     {
-      "src": "api/index.py",
-      "use": "@vercel/python"
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ],
-  "routes": [
+  "headers": [
     {
-      "src": "/api/(.*)",
-      "dest": "api/index.py"
-    },
-    {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/index.html"
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, no-store, must-revalidate"
+        }
+      ]
     }
   ]
 }

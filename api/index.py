@@ -13,7 +13,10 @@ from app.European_option_price_calculator.routers import (
     router as European_option_price_calculator_router,
 )
 
-app = FastAPI(title="Option Price Calculator API")
+app = FastAPI(
+    title="Option Price Calculator API",
+    root_path="/api",  # 告诉 FastAPI 它运行在 /api 路径下
+)
 
 # CORS 配置
 app.add_middleware(

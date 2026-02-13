@@ -250,7 +250,7 @@ const performCalculation = () => {
       strike_price: form.strikePrice,
       days_to_expiry: form.daysToExpiry
     })
-  fetch('/api/v1/calculate', {
+  fetch('/api/calculate', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: data

@@ -3,10 +3,7 @@
   "builds": [
     {
       "src": "frontend/option_price_calculator/package.json",
-      "use": "@vercel/static-build",
-      "config": {
-        "distDir": "frontend/option_price_calculator/dist"
-      }
+      "use": "@vercel/static-build"
     },
     {
       "src": "api/index.py",
@@ -25,7 +22,5 @@
       "src": "/(.*)",
       "dest": "/index.html"
     }
-  ],
-  "buildCommand": "npm --prefix frontend/option_price_calculator install && npm --prefix frontend/option_price_calculator run build",
-  "outputDirectory": "frontend/option_price_calculator/dist"
+  ]
 }

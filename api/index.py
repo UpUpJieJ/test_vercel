@@ -44,8 +44,9 @@ async def validation_exception_handler(request, exc):
     return JSONResponse(status_code=422, content={"message": errors})
 
 
-# 包含路由
-app.include_router(European_option_price_calculator_router, prefix="/api")
+# 包含路由 - 注意：Vercel 已经通过路由配置添加了 /api 前缀
+# 所以这里不需要再添加 /api 前缀
+app.include_router(European_option_price_calculator_router, prefix="/v1")
 
 # Vercel Serverless Function handler
 # 注意：这里导出 app 供 Vercel 使用
